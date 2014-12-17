@@ -15,7 +15,7 @@
  */
 
 var host = 'https://dodo-twitter.herokuapp.com/api/';
-var userId = '';
+var userId;
 
 /**
  * Send request to server to add a new dodo.
@@ -26,8 +26,8 @@ var userId = '';
  */
 
 function addDodo(userId, dodoId, fn) {
-  if (userid)
-    $.post(host + 'dodo', { userId: userId, dodoId: dodoId }, fn);
+  if (!userId) return;
+  $.post(host + 'dodo', { userId: userId, dodoId: dodoId }, fn);
 }
 
 /**
@@ -38,8 +38,7 @@ function addDodo(userId, dodoId, fn) {
 
 function getDodoId(button) {
   return $(button)
-    .closest('div.content')
-    .find('span.js-action-profile-name')
+    .closest('div.account')
     .attr('data-user-id');
 }
 
