@@ -49,7 +49,6 @@ function getDodoId(button) {
 
 function bindFollowButtons() {
   var buttons = document.getElementsByClassName('follow-button');
-  console.log(buttons.length);
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
       addDodo(userId, getDodoId(this), showMessage);
@@ -81,8 +80,5 @@ function setUserId() {
  * Start script!
  */
 
-setTimeout(function() {
-  setUserId();
-  bindFollowButtons();
-}, 5000);
-
+setUserId();
+bindFollowButtons();
