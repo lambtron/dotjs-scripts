@@ -48,12 +48,9 @@ function getDodoId(button) {
  */
 
 function bindFollowButtons() {
-  var buttons = document.getElementsByClassName('follow-button');
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function() {
-      addDodo(userId, getDodoId(this), showMessage);
-    });
-  }
+  $('.follow-button').click(function() {
+    addDodo(userId, getDodoId(this), showMessage);
+  });
 }
 
 /**
