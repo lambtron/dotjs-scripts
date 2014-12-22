@@ -4,6 +4,7 @@
  *
  * README.md
  * > Automatically collapse children comments. Press '+' to expand.
+ * > Automatically expand and load imgur links.
  *
  * deps:
  *  jQuery 1.9
@@ -45,8 +46,24 @@ function toggleExpandButton(el) {
 }
 
 /**
+ * Load an image only if on comments page.
+ */
+
+function loadImage() {
+  var thumbnail = $('a.thumbnail');
+  if (thumbnail.length > 1) return;
+  var href = thumbnail.attr('href');
+  $('a.thumbnail img')
+    .attr('src', href)
+    .attr('width', '')
+    .attr('height', '');
+  thumbnail.removeClass('thumbnail');
+}
+
+/**
  * Start script.
  */
 
 hideChildren();
 addExpandButton();
+loadImage();
