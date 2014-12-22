@@ -5,6 +5,7 @@
  * README.md
  * > Automatically collapse children comments. Press '+' to expand.
  * > Automatically expand and load imgur links.
+ * > Format AMAs so that all answered questions are on top in decreasing votes.
  *
  * deps:
  *  jQuery 1.9
@@ -28,7 +29,7 @@ function addExpandButton() {
     .css('cursor', 'pointer')
     .click(function() {
     toggleExpandButton(this);
-    $('.commentarea .comment .child').toggle();
+    $(this).closest('.comment').find('.child').toggle();
   });
 }
 
