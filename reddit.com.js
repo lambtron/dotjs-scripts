@@ -62,9 +62,21 @@ function loadImage() {
 }
 
 /**
+ * AMA format.
+ */
+
+function formatAMA() {
+  var title = $('.entry a.title').text().toLowerCase();
+  var amaFilter = ['ama', 'aua', 'ask us anything', 'ask me anything'];
+  if (!amaFilter.join(',').indexOf(title)) return;
+  var OP = $('a.author').text();
+}
+
+/**
  * Start script.
  */
 
 hideChildren();
 addExpandButton();
 loadImage();
+formatAMA();
