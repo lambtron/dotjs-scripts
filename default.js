@@ -1,10 +1,19 @@
 
 /**
- * Loaded on every request.
+ * default.js
+ *
+ * README.md
+ * > showMessage
+ * > show post to HN or HN discussion link
+ *
+ * deps:
+ *  jQuery 1.9
  */
 
-var HN_host = 'https://hn.algolia.com/api/v1/search?query=';
-var HN_hn = 'https://news.ycombinator.com/item?id=';
+/**
+ * Static variables.
+ */
+
 var url = document.URL;
 var title = document.title;
 
@@ -12,19 +21,21 @@ var title = document.title;
  * Main script.
  */
 
-HN_getHNurl();
+HN_showHN();
 
 /**
  * Get HN discussion URL.
  */
 
-function HN_getHNurl() {
-  $.get(HN_host + url, function(data) {
+function HN_showHN() {
+  var host = 'https://hn.algolia.com/api/v1/search?query=';
+  var hn = 'https://news.ycombinator.com/item?id=';
+  $.get(host + url, function(data) {
     if (!data.hits) return;
     var el = document.createElement('div');
     var a = document.createElement('a');
     if (data.hits.length === 1) {
-      a.href = HN_hn + data.hits[0].objectID;
+      a.href = hn + data.hits[0].objectID;
       a.text = 'Discuss on HN';
     }
     if (data.hits.length === 0) {
@@ -32,7 +43,7 @@ function HN_getHNurl() {
       a.text = 'Submit to HN';
     }
     $(el).append(a);
-    $(el).css('bgcolor', '#ff6600');
+    $(el).css('background', '#ff6600');
     showMessage(el);
   });
 }
@@ -40,8 +51,8 @@ function HN_getHNurl() {
 /**
  * Get submit to HN link.
  *
- * @param {string} title
- * @param {string} url
+ * @param {string} title (optional)
+ * @param {string} url (optional)
  */
 
 function HN_getSubmitURL(title, url) {
@@ -54,7 +65,7 @@ function HN_getSubmitURL(title, url) {
 }
 
 /**
- * Library.
+ * Library of helper functions exposed to every page.
  */
 
 /**
@@ -84,9 +95,9 @@ function showMessage(el, opts) {
     'background-color': '#dff0d8'
   };
   var id = '#' + $(el).attr('id');
-  // var style = $.extend($(el).css(), defaultStyle);
-  // console.log(style);
-  $(el).css(defaultStyle);
+  var style = $(el).attr('style');
+  style = $.extend(style, defaultStyle);
+  $(el).css(style);
   $('body').append(el);
   if (opts.fade)
     setTimeout(function() { $(id).remove() }, 3000);
