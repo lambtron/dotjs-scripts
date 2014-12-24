@@ -30,7 +30,7 @@ TODO
 
 #### Discuss or share on Hacker News
 
-![](http://cl.ly/Z5nC)
+![](https://s3.amazonaws.com/f.cl.ly/items/0R0Q2J1k2f393d0L1I2s/Screen%20Shot%202014-12-24%20at%206.11.41%20PM.png)
 
 Automatically appends a footer with a link to go straight to the Hacker News discussion. If story is not on Hacker News, then the link will take you to the Hacker News submission page.
 
