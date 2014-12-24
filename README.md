@@ -10,6 +10,30 @@
 - ??
 - Profit
 
+## Sites
+
+### Twitter
+
+#### Add to Dodo list
+
+TODO
+
+### Reddit
+
+#### Collapse children comments
+
+TODO
+
+### GitHub
+
+### Default (all)
+
+#### Discuss or share on Hacker News
+
+![](http://cl.ly/Z5nC)
+
+Automatically appends a footer with a link to go straight to the Hacker News discussion. If story is not on Hacker News, then the link will take you to the Hacker News submission page.
+
 ## License (MIT)
 
     WWWWWW||WWWWWW
