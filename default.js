@@ -39,29 +39,16 @@ function HN_showHN() {
       a.text = 'Discuss on HN';
     }
     if (data.hits.length === 0) {
-      a.href = HN_getSubmitURL(title, url);
+      var link = 'https://news.ycombinator.com/submitlink?';
+      url = 'u=' + encodeURI(url);
+      title = 't=' + encodeURI(title);
+      a.href = link;
       a.text = 'Submit to HN';
     }
     $(el).append(a);
     $(el).css('background', '#ff6600');
     showMessage(el);
   });
-}
-
-/**
- * Get submit to HN link.
- *
- * @param {string} title (optional)
- * @param {string} url (optional)
- */
-
-function HN_getSubmitURL(title, url) {
-  title = title || '';
-  url = url || '';
-  var host = 'https://news.ycombinator.com/submitlink?';
-  url = 'u=' + encodeURI(url);
-  title = 't=' + encodeURI(title);
-  return host + url + '&' + title;
 }
 
 /**
@@ -73,9 +60,24 @@ function HN_getSubmitURL(title, url) {
  *
  * @param {element} el
  * @param {object} opts (optional)
+ *
+ * TODO: figure out how to merge `el` style with `defaultStyle`.
  */
 
 function showMessage(el, opts) {
+  var x = document.createElement('a');
+  x.text = 'x';
+  $(x).css({
+    'position': 'absolute',
+    'top': '5px',
+    'right': '5px',
+    'z-index': '101',
+    'cursor': 'pointer'
+  });
+  $(x).click(function() {
+    $(el).remove();
+  });
+  $(el).append($(x));
   var defaultOpts = {
     'fade': true
   };
