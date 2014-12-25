@@ -26,7 +26,14 @@ dodo();
 
 ```
 collapseComments();
-formatAMA(); // WIP
+```
+
+#### Format AMAs
+
+WIP
+
+```
+formatAMA();
 ```
 
 ### GitHub
