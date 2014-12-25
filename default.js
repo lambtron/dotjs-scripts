@@ -31,7 +31,7 @@ function HN_showHN() {
   var host = 'https://hn.algolia.com/api/v1/search?query=';
   var hn = 'https://news.ycombinator.com/item?id=';
   $.get(host + url, function(data) {
-    if (!data.hits) return;
+    if (!data.hits || data.hits.length > 1) return;
     var el = document.createElement('div');
     var a = document.createElement('a');
     if (data.hits.length === 1) {
