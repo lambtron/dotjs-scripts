@@ -36,7 +36,7 @@ function HN_showHN() {
     var a = document.createElement('a');
     if (data.hits.length === 1) {
       a.href = hn + data.hits[0].objectID;
-      a.text = 'Discuss on HN';
+      a.text = data.hits[0].num_comments + ' comments on HN';
     }
     if (data.hits.length === 0) {
       var link = 'https://news.ycombinator.com/submitlink?';
