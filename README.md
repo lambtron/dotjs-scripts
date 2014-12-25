@@ -26,9 +26,11 @@ TODO
 
 ### GitHub
 
-### Default (all)
+### Default (all sites)
 
 #### Discuss or share on Hacker News
+
+`HN_showHN();`
 
 ![](https://s3.amazonaws.com/f.cl.ly/items/0R0Q2J1k2f393d0L1I2s/Screen%20Shot%202014-12-24%20at%206.11.41%20PM.png)
 
