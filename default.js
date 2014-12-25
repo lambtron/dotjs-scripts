@@ -100,3 +100,17 @@ function showMessage(el, opts) {
   if (opts.fade)
     setTimeout(function() { $(id).remove() }, 3000);
 }
+
+/**
+ * Show basic temporary notification to handle standard node callback signature.
+ *
+ * @param {Object} err
+ * @param {Object} data
+ */
+
+function showNotification(err, data) {
+  var el = document.createElement('div');
+  var message = err || data;
+  $(el).text(message);
+  showMessage(el, { fade: true });
+}

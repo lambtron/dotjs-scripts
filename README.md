@@ -17,8 +17,7 @@
 #### Add to Dodo list
 
 ```
-setUserId();
-bindFollowButtons();
+dodo();
 ```
 
 ### Reddit
@@ -29,6 +28,10 @@ bindFollowButtons();
 hideChildren();
 addExpandButton();
 loadImage();
+
+/////
+collapseChildrenComments();
+formatAMA();
 ```
 
 ### GitHub
