@@ -18,7 +18,7 @@ var url = document.URL;
 var title = document.title;
 
 /**
- * Main script.
+ * Run scripts.
  */
 
 HN_showHN();
@@ -70,7 +70,7 @@ function showMessage(el, opts) {
   $(x).css({
     'position': 'absolute',
     'top': '5px',
-    'right': '5px',
+    'right': '15px',
     'z-index': '101',
     'cursor': 'pointer'
   });
