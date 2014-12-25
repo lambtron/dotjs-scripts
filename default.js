@@ -40,9 +40,7 @@ function HN_showHN() {
     }
     if (data.hits.length === 0) {
       var link = 'https://news.ycombinator.com/submitlink?';
-      url = 'u=' + encodeURI(url);
-      title = 't=' + encodeURI(title);
-      a.href = link;
+      a.href = link + 'u=' + encodeURI(url) + '&t=' + encodeURI(title);
       a.text = 'Submit to HN';
     }
     $(el).append(a);
