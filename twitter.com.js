@@ -3,6 +3,8 @@
  * twitter.com.js
  *
  * README.md
+ *
+ * DODO:
  * > Listens for your following of users, automatically adds those users
  * > to your Dodo[1] list.
  *
@@ -14,41 +16,32 @@
  * Static variables.
  */
 
-var host = 'https://dodo-twitter.herokuapp.com/api/';
 var userId;
 
 /**
- * Send request to server to add a new dodo.
- *
- * @param {String} userId
- * @param {String} dodoId
- * @param {Function} fn (optional)
+ * Start scripts
  */
 
-function addDodo(userId, dodoId, fn) {
-  if (!userId) return;
-  $.post(host + 'dodo', { userId: userId, dodoId: dodoId }, fn);
+dodo();
+
+/**
+ * Define `dodo` script.
+ */
+
+function dodo() {
+  setUserId();
+  setupDodo();
 }
 
 /**
- * Return twitter user id from follow button.
- *
- * @param {Element} button
+ * On click for follow buttons, send POST to add to `dodo`.
  */
 
-function getDodoId(button) {
-  return $(button)
-    .closest('div.account')
-    .attr('data-user-id');
-}
-
-/**
- * On click for follow buttons, bind appropriate event listener.
- */
-
-function bindFollowButtons() {
+function setupDodo() {
   $('.follow-button').click(function() {
-    addDodo(userId, getDodoId(this), showMessage);
+    var host = 'https://dodo-twitter.herokuapp.com/api/';
+    var dodoId = $(this).closest('div.account').attr('data-user-id');
+    $.post(host + 'dodo', { userId: userId, dodoId: dodoId }, showMessage);
   });
 }
 
@@ -85,6 +78,10 @@ function showMessage(err, data) {
 }
 
 /**
+ * Library of helper functions available for twitter.com.
+ */
+
+/**
  * Set userId.
  */
 
@@ -93,10 +90,3 @@ function setUserId() {
   if (!userId)
     showMessage('Please login to use Dodo.', null);
 }
-
-/**
- * Start script!
- */
-
-setUserId();
-bindFollowButtons();

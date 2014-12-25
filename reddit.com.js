@@ -12,6 +12,17 @@
  */
 
 /**
+ * Start scripts.
+ *
+ * TODO: refactor so only one function is called for one script.
+ */
+
+hideChildren();
+addExpandButton();
+loadImage();
+formatAMA();
+
+/**
  * Hide children comments.
  */
 
@@ -71,12 +82,3 @@ function formatAMA() {
   if (!amaFilter.join(',').indexOf(title)) return;
   var OP = $('a.author').text();
 }
-
-/**
- * Start script.
- */
-
-hideChildren();
-addExpandButton();
-loadImage();
-formatAMA();

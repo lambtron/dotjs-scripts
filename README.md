@@ -16,13 +16,20 @@
 
 #### Add to Dodo list
 
-TODO
+```
+setUserId();
+bindFollowButtons();
+```
 
 ### Reddit
 
 #### Collapse children comments
 
-TODO
+```
+hideChildren();
+addExpandButton();
+loadImage();
+```
 
 ### GitHub
 
@@ -30,7 +37,9 @@ TODO
 
 #### Discuss or share on Hacker News
 
-`HN_showHN();`
+```
+HN_showHN();
+```
 
 ![](https://s3.amazonaws.com/f.cl.ly/items/0R0Q2J1k2f393d0L1I2s/Screen%20Shot%202014-12-24%20at%206.11.41%20PM.png)
 
