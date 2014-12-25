@@ -25,13 +25,8 @@ dodo();
 #### Collapse children comments
 
 ```
-hideChildren();
-addExpandButton();
-loadImage();
-
-/////
-collapseChildrenComments();
-formatAMA();
+collapseComments();
+formatAMA(); // WIP
 ```
 
 ### GitHub
