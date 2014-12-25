@@ -74,13 +74,9 @@ function showMessage(el, opts) {
     'z-index': '101',
     'cursor': 'pointer'
   });
-  $(x).click(function() {
-    $(el).remove();
-  });
+  $(x).click(function() { $(el).remove() });
   $(el).append($(x));
-  var defaultOpts = {
-    'fade': true
-  };
+  var defaultOpts = { 'fade': true };
   opts = opts || {};
   opts = $.extend(opts, defaultOpts);
   var defaultStyle = {
