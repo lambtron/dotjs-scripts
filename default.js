@@ -30,6 +30,7 @@ HN_showHN();
 function HN_showHN() {
   var host = 'https://hn.algolia.com/api/v1/search?query=';
   var hn = 'https://news.ycombinator.com/item?id=';
+  if (~url.indexOf('?')) url = url.substring(0, url.indexOf('?'));
   $.get(host + url, function(data) {
     if (!data.hits || data.hits.length > 1) return;
     var el = document.createElement('div');

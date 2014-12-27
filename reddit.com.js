@@ -19,7 +19,7 @@
  * Start scripts.
  */
 
-collapseComments();
+// collapseComments();
 
 /**
  * Collapse children comments.
