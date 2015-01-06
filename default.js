@@ -29,7 +29,7 @@ HN_showHN();
  */
 
 function HN_showHN() {
-  var whitelist = ['segment.zendesk.com'];
+  var whitelist = ['segment.zendesk.com', 'inbox.google.com', 'www.gmail.com'];
   if (~whitelist.join(',').indexOf(host)) return;
   var domain = 'https://hn.algolia.com/api/v1/search?query=';
   var hn = 'https://news.ycombinator.com/item?id=';

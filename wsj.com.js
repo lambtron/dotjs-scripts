@@ -27,12 +27,9 @@ removePaywall();
 
 function removePaywall() {
   if ($('.wsj-snippet-login').length !== 1) return;
-  var google = 'https://www.google.com/?gws_rd=ssl#q=' + encodeURI(url);
-  $.get(google, function(data) {
-    console.log(data);
-    // var link = $('a[data-href=\"' + url + '\"]');
-    // console.log(link);
+  var query = 'https://googlesearch.herokuapp.com/api/search?query=';
+  $.get(query + encodeURI(url), function(data) {
+    if (!data || data.length === 0 || !data[0].link) return;
+    window.location.href = data[0].link;
   });
-  // console.log(link);
-  // window.location.href = link;
 }
